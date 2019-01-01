@@ -10,7 +10,7 @@ const bodyParser = require('body-parser');
 
 
 app.get('/usuario', function (req, res) {
-  res.json(bodyParser.json())
+  res.json('deg usuario local')
 
 });
 
@@ -30,8 +30,8 @@ app.post('/usuario', function (req, res) {
 
   });
 
-
-  app.put('/usuario/:id', function (req, res) {
+app.put('/usuario/:id', function (req, res) {
+    
     let id = req.params.id;
   
     res.jason({
@@ -40,9 +40,10 @@ app.post('/usuario', function (req, res) {
   });
  
 app.delete('/usuario', function (req, res) {
-    res.json(bodyParser.json())
+    res.json('delete usuario')
   
   });
+
 app.listen(process.env.PORT,() => {
     console.log('Escuchando puertos: ', process.env.PORT);
 });
